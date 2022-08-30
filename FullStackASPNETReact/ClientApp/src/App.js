@@ -5,18 +5,21 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 
+import { GraphData } from './components/GraphData';
+import { withAuth } from './msal/MsalAuthProvider';
+
 import './custom.css'
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render () {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-      </Layout>
-    );
-  }
+class RootApp extends Component {
+    render() {
+        return (
+            <Layout {...this.props}>
+                <Route exact path='/' component={Home} />
+                <Route path='/counter' component={Counter} />
+                <Route path='/fetch-data' component={FetchData} />
+                <Route path='/graph-data' component={GraphData} />
+            </Layout>
+        );
+    }
 }
+export const App = withAuth(RootApp);
