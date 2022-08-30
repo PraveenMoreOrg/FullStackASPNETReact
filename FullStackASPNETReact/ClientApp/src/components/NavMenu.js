@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+import { UserLogin } from './UserLogin';
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -38,7 +39,8 @@ export class NavMenu extends Component {
                 </NavItem>
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-                </NavItem>
+                  </NavItem>
+                  <UserLogin {...this.props} />
               </ul>
             </Collapse>
           </Container>

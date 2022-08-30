@@ -56,4 +56,26 @@ export class FetchData extends Component {
     const data = await response.json();
     this.setState({ forecasts: data, loading: false });
   }
+
+  // async populateWeatherData() {
+  //   // const response = await fetch('weatherforecast');
+  //   // response.then((res) => {
+  //   //   this.setState({ forecasts: res.json(), loading: false });
+  //   // });
+  //   let myPromise = new Promise(function (resolve) {
+  //     let req = new XMLHttpRequest();
+  //     req.open('GET', 'weatherforecast');
+  //     req.onload = function () {
+  //       if (req.status == 200) {
+  //         resolve(req.response);
+  //         // this.setState({ forecasts: req.response, loading: false });
+  //       } else {
+  //         resolve("File not found");
+  //       }
+  //     };
+  //     req.send();
+  //   });
+
+  // }
+
 }
